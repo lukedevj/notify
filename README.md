@@ -39,8 +39,9 @@ Setting up crontab so that the software runs at a certain time.
 sudo crontab -e
 ```
 
-Running notification every 1 hour.
+Running notification every **23:59**.
 ```shell
-00 1   * * *   root    whoami | notify "Good Morning, %s!" --subject "Let's wake up?" --exptime "range 06:00 in 06:50"
+59 23 * * * whoami | notify "Good Morning, %s!" --subject "Let's wake up?" --exptime "range 06:00 in 06:50"
 ```
 
+[See more examples of reports](./examples)
