@@ -137,15 +137,14 @@ def main(body: str, subject: str, nonzero: bool, exptime: str, edit_config: bool
             click.echo('* Please restart the software to apply the changes.')
             raise click.Abort()
         
-    else:
-        mail = Mail(
-            smtp_host=conf['email.smtp.host'], 
-            smtp_port=conf['email.smtp.port'],
-            smtp_user=conf['email.smtp.user'],
-            smtp_pass=conf['email.smtp.pass'] 
-        )
+    mail = Mail(
+        smtp_host=conf['email.smtp.host'], 
+        smtp_port=conf['email.smtp.port'],
+        smtp_user=conf['email.smtp.user'],
+        smtp_pass=conf['email.smtp.pass'] 
+    )
 
-        for email in conf['email.list']:
-            mail.sender(
-                to_email=email, subject=subject, body=body
-            )
+    for email in conf['email.list']:
+        mail.sender(
+            to_email=email, subject=subject, body=body
+        )
