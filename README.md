@@ -6,8 +6,8 @@ Receive daily reports.
 
 ## Install
 ```shell
-cd ~/ && git clone https://github.com/lukedevj/notify &&
-python3 notify/setup.py install --user
+git clone https://github.com/lukedevj/notify
+python3 ./notify/setup.py install --user
 ```
 
 ## Configuration
