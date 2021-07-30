@@ -28,7 +28,7 @@ open ~/.notify/.notify.toml
 ## Sending E-MAIL
 Send a "Good morning!" email if the time is in the range of **06:00** to **06:50**
 ```shell
-whoami | notify "Good Morning, %s!" --subject "Let's wake up?" --exptime "range 06:00 in 06:50"
+whoami | notify "Good Morning, %s" --subject "Let's wake up?" --exptime "range 06:00 in 06:50"
 ```
 
 ## Crontab
@@ -41,7 +41,7 @@ sudo crontab -e
 
 Running notification every **23:59**.
 ```shell
-59 23 * * * whoami | notify "Good Morning, %s!" --subject "Let's wake up?" --exptime "range 06:00 in 06:50"
+59 23 * * * whoami | notify "Good Morning, %s" --subject "Let's wake up?" --exptime "range 06:00 in 06:50"
 ```
 
 [See more examples of reports](./examples)
