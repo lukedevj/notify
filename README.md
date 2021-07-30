@@ -13,7 +13,7 @@ python3 notify/setup.py install --user
 ## Configuration
 
 ```shell
-notify --edit-config
+notify "" --edit-config
 ```
 
 open ~/.notify/.notify.toml
