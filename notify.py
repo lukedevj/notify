@@ -106,11 +106,11 @@ def main(body: str, subject: str, nonzero: bool, exptime: str, edit_config: bool
                 click.echo('* Software aborted because the of time expected is different')
                 raise click.Abort()
     
-    path = os.path.expanduser('~/.notify')
+    path = os.path.expanduser('~/notify')
     if (os.path.exists(path) == False):
         os.mkdir(path)
     
-    file = ('%s/.notify.toml' % (path))
+    file = ('%s/notify.toml' % (path))
     if (os.path.exists(file) == False):
         data = {
             'email.smtp.host': '', 'email.smtp.port': '', 
@@ -133,7 +133,7 @@ def main(body: str, subject: str, nonzero: bool, exptime: str, edit_config: bool
     
     elif (sys.stdin.isatty() == True):
         if (edit_config == True):
-            os.system('nano ~/.notify/.notify.toml')
+            os.system('nano ~/notify/notify.toml')
             click.echo('* Please restart the software to apply the changes.')
             raise click.Abort()
         
