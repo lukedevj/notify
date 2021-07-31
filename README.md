@@ -10,7 +10,7 @@ Receive daily reports directly from your email.
 * Clone Repository 
 
 ```bash
-$ python3 ./notify/setup.py install
+$ python3 /notify/setup.py install --user
 ```
 
 Verify it's installed:
@@ -66,13 +66,15 @@ $ python3 -c "print(5-5)" | notify "The Result is non-zero." --nonzero
 First let's create a bash script, so that crontab can run at a certain time.
 
 ```bash
+$ which bos
+$ which notify
 $ nano ~/notify/report.sh
 ```
 Let's use [BOS](https://github.com/alexbosworth/balanceofsatoshis) to generate a report about the node.
 
 ```bash
 #!/bin/bash
-bos report --styled | notify "%s" --subject="Daily node update"
+/path/bos report --styled | /path/notify "%s" --subject="Daily node update"
 ```
 
 Now we are going to configure crontab but before that you should be familiar with it, [Google](https://www.google.com/search?q=using+crontab+on+linux) it to be more familiar.
@@ -80,10 +82,9 @@ Now we are going to configure crontab but before that you should be familiar wit
 ```bash
 $ crontab -e
 ```
-We are configuring the crontab so that when the time comes to 23:59 it executes the script in bash specified.
+We are configuring the crontab so that when the time comes to **23:59** it executes the script in bash specified.
 ```bash
 # m h  dom mon dow   command
-59 23 * * * bash ~/notify/report.sh
+59 23 * * * /bin/bash ~/notify/report.sh
 ```
-
 Thanks for this tool your contribution will be welcome :)
