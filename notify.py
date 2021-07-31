@@ -63,6 +63,10 @@ def main(body: str, subject: str, nonzero: bool, exptime: str, edit_config: bool
             click.echo('* Software aborted on output of stdin is zero.')
             raise click.Abort()
         
+        if (stdin == ''):
+            click.echo('* Software aborted not stdin are empty.')
+            raise click.Abort()
+        
         if '%s' in body:
             body = body % (stdin)
         else:
