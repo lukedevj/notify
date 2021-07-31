@@ -83,7 +83,7 @@ $ crontab -e
 We are configuring the crontab so that when the time comes to 23:59 it executes the script in bash specified.
 ```bash
 # m h  dom mon dow   command
-59 23 * * * bash bash ~/notify/report.sh
+59 23 * * * bash ~/notify/report.sh
 ```
 
 Thanks for this tool your contribution will be welcome :)
