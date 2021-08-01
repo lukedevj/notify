@@ -19,7 +19,6 @@ class Mail:
         self.smtp_port = int(smtp_port)
         self.smtp_user = str(smtp_user)
         self.smtp_pass = str(smtp_pass)
-        print(self.smtp_user, self.smtp_pass)
         self.smtp_email = (
             self.smtp_user + '@' + self.smtp_host[5:]
         )
