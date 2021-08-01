@@ -19,7 +19,7 @@ class Mail:
         self.smtp_port = int(smtp_port)
         self.smtp_user = str(smtp_user)
         self.smtp_pass = str(smtp_pass)
-        
+        print(self.smtp_user, self.smtp_pass)
         self.smtp_email = (
             self.smtp_user + '@' + self.smtp_host[5:]
         )
@@ -31,14 +31,7 @@ class Mail:
         message+= (body)
 
         context = ssl.create_default_context()
-        with smtplib.SMTP(self.smtp_host, self.smtp_port) as server:
-            try:
-                server.starttls(context=context)
-                server.login(self.smtp_user, self.smtp_pass)
-            except:
-                click.echo('* [ERROR] Invalid username or password.')
-                raise click.Abort()
-
+        with smtplib.SMTP_SSL(self.smtp_host, self.smtp_port, context=context) as server:
             server.sendmail(
                 self.smtp_email, to_email, message.encode('utf-8')
             )
@@ -148,3 +141,4 @@ def main(body: str, subject: str, nonzero: bool, exptime: str, edit_config: bool
         mail.sender(
             to_email=email, subject=subject, body=body
         )
+
