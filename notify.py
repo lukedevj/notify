@@ -32,10 +32,8 @@ class Mail:
 
         context = ssl.create_default_context()
         with smtplib.SMTP_SSL(self.smtp_host, self.smtp_port, context=context) as server:
-            server.sendmail(
-                self.smtp_email, to_email, message.encode('utf-8')
-            )
-            server.quit()
+            server.login(self.smtp_user, self.smtp_pass)
+            server.sendmail(self.smtp_email, to_email, message.encode('utf-8'))
 
 @click.command()
 @click.argument('body')
@@ -142,3 +140,4 @@ def main(body: str, subject: str, nonzero: bool, exptime: str, edit_config: bool
             to_email=email, subject=subject, body=body
         )
 
+main()
