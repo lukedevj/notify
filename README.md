@@ -10,7 +10,7 @@ Receive daily reports directly from your email.
 * Clone Repository 
 
 ```bash
-$ python3 /notify/setup.py install --user
+$ python3 notify/setup.py install --user
 ```
 
 Verify it's installed:
