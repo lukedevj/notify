@@ -71,8 +71,8 @@ $ which bos
 $ which notify
 $ nano ~/notify/report.sh
 ```
-Let's use [BOS](https://github.com/alexbosworth/balanceofsatoshis) to generate a report about the node. 
-Replace /path/bos and /path/notify with the path shown with the which command.
+Let's use [BOS](https://github.com/alexbosworth/balanceofsatoshis) to generate a report about the node,
+replace /path/bos and /path/notify with the path shown with the which command.
 
 ```bash
 #!/bin/bash
