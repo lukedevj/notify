@@ -2,6 +2,8 @@
 
 Receive daily reports about your node directly from your email.
 
+[Buy me a coffee ☕︎](https://coinos.io/lukedev)
+
 ## Install
 
 * Require `Python >= 3.6`
