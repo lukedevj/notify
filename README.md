@@ -1,6 +1,6 @@
 # Notify
 
-Receive daily reports directly from your email.
+Receive daily reports about your node directly from your email.
 
 [Buy me a coffee ☕︎](https://coinos.io/lukedev)
 
