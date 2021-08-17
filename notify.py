@@ -9,12 +9,7 @@ from datetime import datetime, time
 
 class Mail: 
 
-    def __init__(self, 
-            smtp_host: str, 
-            smtp_port: int,
-            smtp_user: str,
-            smtp_pass: str
-        ):
+    def __init__(self, smtp_host: str, smtp_port: int, smtp_user: str, smtp_pass: str):
         self.smtp_host = str(smtp_host)
         self.smtp_port = int(smtp_port)
         self.smtp_user = str(smtp_user)
