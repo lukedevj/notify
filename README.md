@@ -2,7 +2,7 @@
 
 Receive daily reports about your node directly from your email.
 
-[Buy me a coffee ☕︎](https://coinos.io/lukedevj)
+[![Donate](https://img.shields.io/badge/Donate-Bitcoin-green.svg)](https://coinos.io/lukedevj)
 
 ## Install
 
